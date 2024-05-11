@@ -4,8 +4,10 @@ import com.ari.majumundur.Constant.AppPath;
 import com.ari.majumundur.Models.Entities.Merchant;
 import com.ari.majumundur.Models.Request.AuthRequestCustomer;
 import com.ari.majumundur.Models.Request.AuthRequestMerchant;
+import com.ari.majumundur.Models.Request.LoginRequest;
 import com.ari.majumundur.Models.Response.CommonResponse;
 import com.ari.majumundur.Models.Response.CustomerResponse;
+import com.ari.majumundur.Models.Response.LoginResponse;
 import com.ari.majumundur.Models.Response.MerchantResponse;
 import com.ari.majumundur.Service.AuthService;
 import lombok.RequiredArgsConstructor;
@@ -44,6 +46,19 @@ public class AuthController {
                 .data(merchantResponse)
                 .build();
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
+
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest){
+        LoginResponse loginResponse = authService.login(loginRequest);
+
+        CommonResponse<LoginResponse> response = CommonResponse.<LoginResponse>builder()
+                .statusCode(String.valueOf(HttpStatus.OK.value()))
+                .message("Login Successfully")
+                .data(loginResponse)
+                .build();
+        return ResponseEntity.status(HttpStatus.OK).body(response);
 
     }
 }
