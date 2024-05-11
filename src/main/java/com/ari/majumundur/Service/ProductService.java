@@ -8,11 +8,9 @@ import java.util.List;
 
 public interface ProductService {
     ProductResponse createProductAndPrice(ProductRequest productRequest);
-    ProductResponse getProductDetail(String id);
 
-    List<ProductResponse> getMerchantProduct(String merchantId);
 
     Page<ProductResponse> getAllByNameOrPrice(String name, Long maxPrice, Integer page, Integer size);
 
-    ProductResponse update(ProductRequest productRequest);
+    ProductResponse update(String priceId,ProductRequest productRequest);
 }

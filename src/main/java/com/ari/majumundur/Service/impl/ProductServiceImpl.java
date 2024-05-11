@@ -10,6 +10,8 @@ import com.ari.majumundur.Repository.ProductRepository;
 import com.ari.majumundur.Service.MerchantService;
 import com.ari.majumundur.Service.ProductPriceService;
 import com.ari.majumundur.Service.ProductService;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
@@ -51,22 +53,32 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductResponse getProductDetail(String id) {
-        return null;
-    }
-
-    @Override
-    public List<ProductResponse> getMerchantProduct(String merchantId) {
-        return null;
-    }
-
-    @Override
     public Page<ProductResponse> getAllByNameOrPrice(String name, Long maxPrice, Integer page, Integer size) {
         return null;
     }
 
     @Override
-    public ProductResponse update(ProductRequest productRequest) {
-        return null;
+    @Transactional
+    public ProductResponse update(String priceId,ProductRequest productRequest) {
+        ProductPrice productPrice = productPriceService.getById(priceId);
+        productPrice.setPrice(productRequest.getPrice());
+        productPrice.setStock(productRequest.getStock());
+
+        Product product = productRepository.findById(productPrice.getProduct().getId()).orElseThrow(() -> new EntityNotFoundException("No Product Found"));
+
+        product.setName(productRequest.getProductName());
+        product.setDescription(productRequest.getProductDescription());
+        productPrice.setProduct(product);
+
+
+        productPriceService.create(productPrice);
+
+        return ProductResponse.builder()
+                .productId(product.getId())
+                .productName(product.getName())
+                .productDescription(product.getDescription())
+                .price(productPrice.getPrice())
+                .stock(productPrice.getStock())
+                .build();
     }
 }
