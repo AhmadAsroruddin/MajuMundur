@@ -11,7 +11,7 @@ Anda dapat menggunakan koleksi Postman untuk mencoba API dan melihat contoh perm
 
 ### Contoh Gambar
 
-![Contoh Gambar](link_gambar)
+![Contoh Gambar](https://drive.google.com/file/d/1aqYlUWrIQmWJ-ag2s9f6uI2Bc9LT5VKf/view?usp=share_link)
 
 Tambahan deskripsi atau penjelasan tentang gambar.
 
