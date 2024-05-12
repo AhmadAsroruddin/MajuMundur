@@ -9,12 +9,11 @@ Sebuah API sebuah E-Commerce.
 
 Anda dapat menggunakan koleksi Postman untuk mencoba API dan melihat contoh permintaan.
 
-### Contoh Gambar
+### Database Schema
 
 ![Deskripsi Gambar](drawSQL-image-export-2024-05-12.png)
 
 
-Tambahan deskripsi atau penjelasan tentang gambar.
 
 ## Kontribusi
 
