@@ -40,7 +40,7 @@ public class ProductController {
     }
 
     @PatchMapping("/update/{id}")
-    public ResponseEntity<?> createProduct(@Valid @PathVariable String id, @RequestBody ProductRequest productRequest){
+    public ResponseEntity<?> updateProduct(@Valid @PathVariable String id, @RequestBody ProductRequest productRequest){
         ProductResponse productResponse = productService.update(id,productRequest);
 
         CommonResponse<ProductResponse> response = CommonResponse.<ProductResponse>builder()
@@ -63,6 +63,20 @@ public class ProductController {
                 .build();
 
         return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @PatchMapping("/softDelete/{id}")
+    public ResponseEntity<?> softDelete(@Valid @PathVariable String id){
+        ProductResponse productResponse = productPriceService.softDelete(id);
+
+        return ResponseEntity.status(HttpStatus.OK).body(productResponse);
+    }
+
+    @DeleteMapping("/hardDelete/{id}")
+    public ResponseEntity<?> hardDelete(@Valid @PathVariable String id){
+        productPriceService.hardDelete(id);
+
+        return ResponseEntity.status(HttpStatus.OK).body("Product Deleted");
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)

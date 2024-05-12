@@ -17,4 +17,5 @@ public class ProductResponse {
     private Long price;
     private Integer stock;
     private ProductPriceResponse productPriceResponse;
+    private Boolean isActive;
 }

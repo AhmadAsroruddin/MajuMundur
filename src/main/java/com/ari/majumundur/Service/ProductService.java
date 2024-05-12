@@ -13,4 +13,5 @@ public interface ProductService {
     Page<ProductResponse> getAllByNameOrPrice(String name, Long maxPrice, Integer page, Integer size);
 
     ProductResponse update(String priceId,ProductRequest productRequest);
+
 }

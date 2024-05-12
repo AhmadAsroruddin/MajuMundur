@@ -1,6 +1,7 @@
 package com.ari.majumundur.Service;
 
 import com.ari.majumundur.Models.Entities.ProductPrice;
+import com.ari.majumundur.Models.Response.ProductPriceResponse;
 import com.ari.majumundur.Models.Response.ProductResponse;
 
 import java.util.List;
@@ -10,5 +11,7 @@ public interface ProductPriceService {
     ProductPrice getById(String id);
 
     List<ProductResponse> getAllProduct();
-    ProductPrice getActive(String id, Boolean status);
+
+    ProductResponse softDelete(String productPriceId);
+    String hardDelete(String productPriceId);
 }
