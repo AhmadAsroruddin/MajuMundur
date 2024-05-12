@@ -4,7 +4,7 @@ Sebuah API sebuah E-Commerce.
 
 ## Dokumentasi API
 
-### [Koleksi Postman](gooele.com)
+### [Koleksi Postman](google.com)
 
 Anda dapat menggunakan koleksi Postman untuk mencoba API dan melihat contoh permintaan.
 
