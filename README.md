@@ -11,7 +11,7 @@ Anda dapat menggunakan koleksi Postman untuk mencoba API dan melihat contoh perm
 
 ### Contoh Gambar
 
-![Deskripsi Gambar](images/example.png)
+![Deskripsi Gambar](drawSQL-image-export-2024-05-12.png)
 
 
 Tambahan deskripsi atau penjelasan tentang gambar.
