@@ -4,7 +4,8 @@ Sebuah API sebuah E-Commerce.
 
 ## Dokumentasi API
 
-### [Koleksi Postman](google.com)
+[Koleksi Postman](https://drive.google.com/file/d/1GniDZVgxkAAHQFK8pkowMLGvFvGV_BBw/view?usp=sharing)
+
 
 Anda dapat menggunakan koleksi Postman untuk mencoba API dan melihat contoh permintaan.
 
